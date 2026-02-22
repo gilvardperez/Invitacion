@@ -146,7 +146,7 @@
       bottom:-30px;
       font-size:18px;
       opacity:0;
-      animation: floatUp 3s ease-in forwards;
+      animation: floatUp 5s ease forwards; /* extended to 5s */
     }
 
     @keyframes floatUp{
@@ -460,7 +460,7 @@
 <body>
 
   <!-- =============================================
-       INTRO SPLASH (3 segundos)
+       INTRO SPLASH (5 segundos)
        ============================================= -->
   <div class="intro" id="intro">
     <div class="hearts" id="hearts"></div>
@@ -490,28 +490,32 @@
           </svg>
         </div>
 
-        <!-- Conejito -->
+        <!-- Gatito (reemplaza al conejo) -->
         <div class="intro-animal">
           <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="22" cy="10" rx="5" ry="14" fill="#fce4ec"/>
-            <ellipse cx="38" cy="10" rx="5" ry="14" fill="#fce4ec"/>
-            <ellipse cx="22" cy="10" rx="2.5" ry="10" fill="#f8b4c8"/>
-            <ellipse cx="38" cy="10" rx="2.5" ry="10" fill="#f8b4c8"/>
+            <!-- Orejas -->
+            <polygon points="18,12 26,6 28,18" fill="#fce4ec"/>
+            <polygon points="42,12 34,6 32,18" fill="#fce4ec"/>
+            <!-- Cabeza -->
             <circle cx="30" cy="30" r="16" fill="#fce4ec"/>
-            <circle cx="24" cy="27" r="2" fill="#3a2a26"/>
-            <circle cx="36" cy="27" r="2" fill="#3a2a26"/>
-            <circle cx="25" cy="26" r=".8" fill="#fff"/>
-            <circle cx="37" cy="26" r=".8" fill="#fff"/>
-            <ellipse cx="30" cy="32" rx="2" ry="1.5" fill="#f8b4c8"/>
-            <line x1="18" y1="31" x2="26" y2="32" stroke="#dab8a0" stroke-width=".6"/>
-            <line x1="18" y1="34" x2="26" y2="33" stroke="#dab8a0" stroke-width=".6"/>
-            <line x1="42" y1="31" x2="34" y2="32" stroke="#dab8a0" stroke-width=".6"/>
-            <line x1="42" y1="34" x2="34" y2="33" stroke="#dab8a0" stroke-width=".6"/>
-            <path d="M27 35 q3 2.5 6 0" stroke="#c97878" stroke-width="1" fill="none" stroke-linecap="round"/>
-            <circle cx="19" cy="33" r="3" fill="#f8b4c8" opacity=".40"/>
-            <circle cx="41" cy="33" r="3" fill="#f8b4c8" opacity=".40"/>
-            <ellipse cx="30" cy="52" rx="12" ry="9" fill="#fce4ec"/>
-            <g class="paw"><ellipse cx="12" cy="46" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-25,12,46)"/></g>
+            <!-- Ojos -->
+            <circle cx="24" cy="28" r="2" fill="#3a2a26"/>
+            <circle cx="36" cy="28" r="2" fill="#3a2a26"/>
+            <circle cx="25" cy="27" r=".8" fill="#fff"/>
+            <circle cx="37" cy="27" r=".8" fill="#fff"/>
+            <!-- Nariz y boca -->
+            <path d="M30 32 q1 2 4 2" stroke="#e8819e" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <circle cx="30" cy="32" r="1.6" fill="#e8819e"/>
+            <!-- Bigotes -->
+            <line x1="18" y1="33" x2="26" y2="33" stroke="#dab8a0" stroke-width=".7"/>
+            <line x1="34" y1="33" x2="42" y2="33" stroke="#dab8a0" stroke-width=".7"/>
+            <!-- Mejillas -->
+            <circle cx="20" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
+            <circle cx="40" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
+            <!-- Cuerpo -->
+            <ellipse cx="30" cy="50" rx="12" ry="9" fill="#fce4ec"/>
+            <!-- Manita saludando -->
+            <g class="paw"><ellipse cx="12" cy="44" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-20,12,46)"/></g>
             <ellipse cx="48" cy="50" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(15,48,50)"/>
           </svg>
         </div>
@@ -573,22 +577,21 @@
           </div>
           <div class="dot-sep"></div>
           <div class="animal">
+            <!-- welcome-bar cat -->
             <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="22" cy="10" rx="5" ry="14" fill="#fce4ec"/><ellipse cx="38" cy="10" rx="5" ry="14" fill="#fce4ec"/>
-              <ellipse cx="22" cy="10" rx="2.5" ry="10" fill="#f8b4c8"/><ellipse cx="38" cy="10" rx="2.5" ry="10" fill="#f8b4c8"/>
+              <polygon points="18,12 26,6 28,18" fill="#fce4ec"/>
+              <polygon points="42,12 34,6 32,18" fill="#fce4ec"/>
               <circle cx="30" cy="30" r="16" fill="#fce4ec"/>
-              <circle cx="24" cy="27" r="2" fill="#3a2a26"/><circle cx="36" cy="27" r="2" fill="#3a2a26"/>
-              <circle cx="25" cy="26" r=".8" fill="#fff"/><circle cx="37" cy="26" r=".8" fill="#fff"/>
-              <ellipse cx="30" cy="32" rx="2" ry="1.5" fill="#f8b4c8"/>
-              <line x1="18" y1="31" x2="26" y2="32" stroke="#dab8a0" stroke-width=".6"/>
-              <line x1="18" y1="34" x2="26" y2="33" stroke="#dab8a0" stroke-width=".6"/>
-              <line x1="42" y1="31" x2="34" y2="32" stroke="#dab8a0" stroke-width=".6"/>
-              <line x1="42" y1="34" x2="34" y2="33" stroke="#dab8a0" stroke-width=".6"/>
-              <path d="M27 35 q3 2.5 6 0" stroke="#c97878" stroke-width="1" fill="none" stroke-linecap="round"/>
-              <circle cx="19" cy="33" r="3" fill="#f8b4c8" opacity=".40"/>
-              <circle cx="41" cy="33" r="3" fill="#f8b4c8" opacity=".40"/>
-              <ellipse cx="30" cy="52" rx="12" ry="9" fill="#fce4ec"/>
-              <g class="paw"><ellipse cx="12" cy="46" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-25,12,46)"/></g>
+              <circle cx="24" cy="28" r="2" fill="#3a2a26"/>
+              <circle cx="36" cy="28" r="2" fill="#3a2a26"/>
+              <path d="M30 32 q1 2 4 2" stroke="#e8819e" stroke-width="1" fill="none" stroke-linecap="round"/>
+              <circle cx="30" cy="32" r="1.6" fill="#e8819e"/>
+              <line x1="18" y1="33" x2="26" y2="33" stroke="#dab8a0" stroke-width=".7"/>
+              <line x1="34" y1="33" x2="42" y2="33" stroke="#dab8a0" stroke-width=".7"/>
+              <circle cx="20" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
+              <circle cx="40" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
+              <ellipse cx="30" cy="50" rx="12" ry="9" fill="#fce4ec"/>
+              <g class="paw"><ellipse cx="12" cy="44" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-20,12,46)"/></g>
               <ellipse cx="48" cy="50" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(15,48,50)"/>
             </svg>
           </div>
@@ -694,11 +697,11 @@
       heartsContainer.appendChild(h);
     }
 
-    // Después de 3 segundos, ocultar intro y mostrar invitación
+    // Después de 5 segundos, ocultar intro y mostrar invitación
     setTimeout(() => {
       document.getElementById("intro").classList.add("hide");
       document.getElementById("page").classList.add("show");
-    }, 3000);
+    }, 5000);
 
     // ====== DATOS DEL EVENTO ======
     const EVENT = {
@@ -730,7 +733,10 @@
     function buildMessage(){
       const name = (guestName.value || "").trim() || "Invitado/a";
       const count = Math.max(1, Number(guestCount.value || 1));
-      return `Hola. Soy ${name}.\nConfirmo mi asistencia al Baby Shower.\nAsistentes: ${count}.\n¡Gracias!`;
+      return `Hola. Soy ${name}.
+Confirmo mi asistencia al Baby Shower.
+Asistentes: ${count}.
+¡Gracias!`;
     }
 
     btnWhatsApp.addEventListener("click", () => {
