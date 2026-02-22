@@ -640,7 +640,7 @@
               </g>
             </svg>
           </div>
-        </div>
+        </header>
 
         <div class="subtitle">Queremos celebrar contigo la futura llegada de nuestra bebé</div>
         <div class="divider" aria-hidden="true"><span></span><span></span></div>
@@ -745,11 +745,7 @@
       const name = (guestName.value || "").trim() || "Invitado/a";
       const adults = Math.max(0, Number(adultCount.value || 0));
       const kids = Math.max(0, Number(childCount.value || 0));
-      return `Hola. Soy ${name}.
-Confirmo mi asistencia al Baby Shower.
-Adultos: ${adults}.
-Niños: ${kids}.
-¡Gracias!`;
+      return `Hola. Soy ${name}.\nConfirmo mi asistencia al Baby Shower.\nAdultos: ${adults}.\nNiños: ${kids}.\n¡Gracias!`;
     }
 
     btnWhatsApp.addEventListener("click", () => {
