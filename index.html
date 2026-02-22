@@ -40,7 +40,7 @@
     }
 
     /* =============================================
-       INTRO / SPLASH SCREEN
+       INTRO / SPLASH SCREEN (5s)
        ============================================= */
     .intro{
       position:fixed;
@@ -134,7 +134,7 @@
       font-weight:500;
     }
 
-    /* Corazones flotando en intro */
+    /* Corazones flotando en intro (5s) */
     .hearts{
       position:absolute;
       inset:0;
@@ -146,7 +146,7 @@
       bottom:-30px;
       font-size:18px;
       opacity:0;
-      animation: floatUp 5s ease forwards; /* extended to 5s */
+      animation: floatUp 5s ease-in forwards;
     }
 
     @keyframes floatUp{
@@ -367,7 +367,7 @@
     .rsvp{
       padding: 6px 16px 12px;
       display:grid;
-      gap:10px;
+      gap:8px;
     }
     .rsvp p{
       margin:0;
@@ -377,12 +377,23 @@
       font-weight:700;
     }
 
+    /* Row adjusted to name + adultos + niños */
     .row{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.2fr .8fr .8fr;
       gap:10px;
+      align-items:start;
     }
-    input{
+
+    /* Field wrapper for label + input */
+    .field label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .field input{
       width:100%;
       height: var(--btnH);
       padding: 0 12px;
@@ -392,7 +403,7 @@
       outline:none;
       font-size:14px;
     }
-    input:focus{
+    .field input:focus{
       border-color: rgba(240,111,150,.55);
       box-shadow: 0 0 0 4px rgba(240,111,150,.14);
     }
@@ -447,7 +458,7 @@
     .btn small{ font-weight:800; opacity:.85; }
 
     @media (max-width:420px){
-      .row{ grid-template-columns:1fr; }
+      .row{ grid-template-columns:1fr 1fr; }
       .headline{ font-size:24px; }
       .welcome-bar{ gap:6px; padding: 12px 12px 8px; }
       .welcome-bar .animal{ width:42px; height:42px; }
@@ -490,33 +501,25 @@
           </svg>
         </div>
 
-        <!-- Gatito (reemplaza al conejo) -->
+        <!-- Nueva mascota: Perrito (reemplaza al conejo) -->
         <div class="intro-animal">
           <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-            <!-- Orejas -->
-            <polygon points="18,12 26,6 28,18" fill="#fce4ec"/>
-            <polygon points="42,12 34,6 32,18" fill="#fce4ec"/>
-            <!-- Cabeza -->
-            <circle cx="30" cy="30" r="16" fill="#fce4ec"/>
-            <!-- Ojos -->
-            <circle cx="24" cy="28" r="2" fill="#3a2a26"/>
-            <circle cx="36" cy="28" r="2" fill="#3a2a26"/>
-            <circle cx="25" cy="27" r=".8" fill="#fff"/>
-            <circle cx="37" cy="27" r=".8" fill="#fff"/>
-            <!-- Nariz y boca -->
-            <path d="M30 32 q1 2 4 2" stroke="#e8819e" stroke-width="1" fill="none" stroke-linecap="round"/>
-            <circle cx="30" cy="32" r="1.6" fill="#e8819e"/>
-            <!-- Bigotes -->
-            <line x1="18" y1="33" x2="26" y2="33" stroke="#dab8a0" stroke-width=".7"/>
-            <line x1="34" y1="33" x2="42" y2="33" stroke="#dab8a0" stroke-width=".7"/>
-            <!-- Mejillas -->
-            <circle cx="20" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
-            <circle cx="40" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
-            <!-- Cuerpo -->
-            <ellipse cx="30" cy="50" rx="12" ry="9" fill="#fce4ec"/>
-            <!-- Manita saludando -->
-            <g class="paw"><ellipse cx="12" cy="44" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-20,12,46)"/></g>
-            <ellipse cx="48" cy="50" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(15,48,50)"/>
+            <!-- orejas -->
+            <path d="M18 14 L26 6 L30 22 Z" fill="#8b5e3c" />
+            <path d="M42 14 L34 6 L30 22 Z" fill="#8b5e3c" />
+            <!-- cabeza -->
+            <circle cx="30" cy="32" r="16" fill="#e9c9a6" />
+            <!-- ojos -->
+            <circle cx="24" cy="30" r="2.2" fill="#2f2f2f" />
+            <circle cx="36" cy="30" r="2.2" fill="#2f2f2f" />
+            <circle cx="24.6" cy="29.4" r="0.6" fill="#fff"/>
+            <circle cx="36.6" cy="29.4" r="0.6" fill="#fff"/>
+            <!-- nariz boca -->
+            <ellipse cx="30" cy="36" rx="2" ry="1.6" fill="#6b3f2b" />
+            <path d="M26 38 q4 3 8 0" stroke="#6b3f2b" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <!-- manita saludando -->
+            <g class="paw"><ellipse cx="12" cy="46" rx="4.6" ry="3.6" fill="#e9c9a6" transform="rotate(-20,12,46)"/></g>
+            <ellipse cx="48" cy="50" rx="4.6" ry="3.6" fill="#e9c9a6" transform="rotate(15,48,50)"/>
           </svg>
         </div>
 
@@ -577,22 +580,15 @@
           </div>
           <div class="dot-sep"></div>
           <div class="animal">
-            <!-- welcome-bar cat -->
+            <!-- reemplazado: perrito en vez de conejo -->
             <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="18,12 26,6 28,18" fill="#fce4ec"/>
-              <polygon points="42,12 34,6 32,18" fill="#fce4ec"/>
-              <circle cx="30" cy="30" r="16" fill="#fce4ec"/>
-              <circle cx="24" cy="28" r="2" fill="#3a2a26"/>
-              <circle cx="36" cy="28" r="2" fill="#3a2a26"/>
-              <path d="M30 32 q1 2 4 2" stroke="#e8819e" stroke-width="1" fill="none" stroke-linecap="round"/>
-              <circle cx="30" cy="32" r="1.6" fill="#e8819e"/>
-              <line x1="18" y1="33" x2="26" y2="33" stroke="#dab8a0" stroke-width=".7"/>
-              <line x1="34" y1="33" x2="42" y2="33" stroke="#dab8a0" stroke-width=".7"/>
-              <circle cx="20" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
-              <circle cx="40" cy="32" r="2.5" fill="#f8b4c8" opacity=".4"/>
-              <ellipse cx="30" cy="50" rx="12" ry="9" fill="#fce4ec"/>
-              <g class="paw"><ellipse cx="12" cy="44" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(-20,12,46)"/></g>
-              <ellipse cx="48" cy="50" rx="4" ry="3.5" fill="#fce4ec" transform="rotate(15,48,50)"/>
+              <path d="M18 14 L26 6 L30 22 Z" fill="#8b5e3c" />
+              <path d="M42 14 L34 6 L30 22 Z" fill="#8b5e3c" />
+              <circle cx="30" cy="32" r="16" fill="#e9c9a6" />
+              <circle cx="24" cy="30" r="2.2" fill="#2f2f2f" />
+              <circle cx="36" cy="30" r="2.2" fill="#2f2f2f" />
+              <ellipse cx="30" cy="36" rx="2" ry="1.6" fill="#6b3f2b" />
+              <g class="paw"><ellipse cx="12" cy="46" rx="4.6" ry="3.6" fill="#e9c9a6" transform="rotate(-20,12,46)"/></g>
             </svg>
           </div>
           <div class="dot-sep"></div>
@@ -644,7 +640,7 @@
               </g>
             </svg>
           </div>
-        </header>
+        </div>
 
         <div class="subtitle">Queremos celebrar contigo la futura llegada de nuestra bebé</div>
         <div class="divider" aria-hidden="true"><span></span><span></span></div>
@@ -666,14 +662,26 @@
         <div class="rsvp">
           <p>Confirma tu asistencia</p>
           <div class="row">
-            <input id="guestName" type="text" placeholder="Tu nombre" autocomplete="name" />
-            <input id="guestCount" type="number" inputmode="numeric" min="1" value="1" />
+            <div class="field">
+              <label for="guestName">Tu nombre</label>
+              <input id="guestName" type="text" placeholder="Nombre" autocomplete="name" />
+            </div>
+
+            <div class="field">
+              <label for="adultCount"># adultos</label>
+              <input id="adultCount" type="number" inputmode="numeric" min="0" value="1" placeholder="# adultos" />
+            </div>
+
+            <div class="field">
+              <label for="childCount"># niños</label>
+              <input id="childCount" type="number" inputmode="numeric" min="0" value="0" placeholder="# niños" />
+            </div>
           </div>
         </div>
 
         <div class="actions">
           <button class="btn primary" id="btnWhatsApp">Confirmar por WhatsApp</button>
-          <a class="btn outline" id="btnMaps" target="_blank" rel="noopener">Abrir ubicación</a>
+          <a class="btn outline" id="btnMaps" target="_blank" rel="noopener">Ver ubicación</a>
           <div class="btn disabled" aria-live="polite">
             Tiempo faltante: <small id="countdown">—</small>
           </div>
@@ -724,18 +732,23 @@
     placeAddr.textContent = EVENT.placeAddr;
     btnMaps.href = EVENT.mapsUrl;
 
+    // URL params: name, adults, kids
     const params = new URLSearchParams(location.search);
     const pName = params.get("name");
-    const pCount = params.get("count");
+    const pAdults = params.get("adults");
+    const pKids = params.get("kids");
     if (pName) guestName.value = pName;
-    if (pCount && !Number.isNaN(Number(pCount))) guestCount.value = String(Math.max(1, Number(pCount)));
+    if (pAdults && !Number.isNaN(Number(pAdults))) adultCount.value = String(Math.max(0, Number(pAdults)));
+    if (pKids && !Number.isNaN(Number(pKids))) childCount.value = String(Math.max(0, Number(pKids)));
 
     function buildMessage(){
       const name = (guestName.value || "").trim() || "Invitado/a";
-      const count = Math.max(1, Number(guestCount.value || 1));
+      const adults = Math.max(0, Number(adultCount.value || 0));
+      const kids = Math.max(0, Number(childCount.value || 0));
       return `Hola. Soy ${name}.
 Confirmo mi asistencia al Baby Shower.
-Asistentes: ${count}.
+Adultos: ${adults}.
+Niños: ${kids}.
 ¡Gracias!`;
     }
 
